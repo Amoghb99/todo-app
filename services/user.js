@@ -68,12 +68,6 @@ const registerUser = async (req, res) => {
         var token = jwt.sign({ id: saveUser._id }, "todoapp", {
           expiresIn: 86400, // expires in 24 hours
         });
-        var secret = "todoapp" + saveUser.password;
-        var token = jwt.sign(
-          { email: saveUser.email, id: saveUser._id },
-          secret,
-          { expiresIn: "15m" }
-        );
 
       return {token, saveUser};
   
